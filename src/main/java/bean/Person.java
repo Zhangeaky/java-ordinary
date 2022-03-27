@@ -10,6 +10,7 @@ package bean;
 public class Person {
     private String name;
     private String id;
+    private Integer age;
 
     public String getName() {
         return name;
@@ -25,6 +26,14 @@ public class Person {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     @Override

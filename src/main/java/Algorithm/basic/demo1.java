@@ -20,28 +20,76 @@ package Algorithm.basic;
 public class demo1 {
 
 
-    public int[] sortSelect(int[] input) {
+    /**
+     *
+     *
+     *
+     * @param input
+     * @return
+     */
+    public static int[] sortSelect(int[] input) {
+
+        //边界条件
+        if ( input == null || input.length < 2 ) {
+            return input;
+        }
+
+        for (int i = 0; i < input.length; i++) {
+            for (int j = i; j < input.length; j++) {
+                if (input[j] < input[i]) {
+                    swap(j, i, input);
+                }
+            }
+        }
+        return input;
+    }
+
+    /**
+     *
+     *
+     * @param input
+     * @return
+     */
+    public static int[] sortInsertion(int[] input) {
+
+        //边界条件
+        if ( input.length < 2 ) {
+            return input;
+        }
+
+        /**
+         * j+1 是当前游标, 游标的初始值是 i
+         * j 是游标前一个数
+         * 游标前一个数一定是游标前所有数里面最大的
+         */
+        for (int i = 1; i < input.length; i++ ) {
+            for (int j = i-1; j>=0 && input[j] > input[j+1]; j--) {
+                swap(j,j+1, input);
+            }
+        }
+
+        return input;
+    }
+
+    private static void swap(int one, int two, int[] arr) {
+        int tmp = arr[one];
+        arr[one] = arr[two];
+        arr[two] = tmp;
+    }
+
+    public int[] sortBubble(int[] input) {
 
         return null;
 
 
     }
 
-
-    public int[] sortInsertion(int[] input) {
-
-
-
-
-        return null;
-    }
-
-
-    //public int[]
     public static void main(String[] args) {
 
-
-
+        int[] arr = new int[]{5,4,3,2,1};
+        int[] test2 = new int[]{1,5,8,6,7,1,1,9,4,1,2};
+        //sortInsertion(arr);
+       // int[] ints = sortSelect(test2);
 
 
     }
