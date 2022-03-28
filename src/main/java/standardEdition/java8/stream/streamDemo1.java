@@ -35,19 +35,20 @@ public class streamDemo1 {
      */
     public static void generate() {
 
-        // 1. Stream.of()
+        // 1. Stream.of() 针对数组类型创建流
         System.out.println("Stream.of 创建: 用于将数组创建成流 ");
         String[] arrs = {"a","fd","g"};
         Stream<String> arrs1 = Stream.of(arrs);
         arrs1.forEach(System.out::println);//运用到 conumser
 
-        // 2. Colletion.stream
+        // 2. Colletion.stream()
         System.out.println("使用Colletion 集成stream()方法");
         List<String> stringList = Arrays.asList(arrs);
         Stream<String> stream = stringList.stream();
         stream.forEach(System.out::println);
 
         //3.
+        System.out.println("Stream generate API");
         Stream<Integer> generate = Stream.generate(() -> 2);
         generate.limit(10).forEach(System.out::println);
 
@@ -60,7 +61,10 @@ public class streamDemo1 {
         IntStream chars = name.chars();
         chars.forEach(System.out::println);
 
+        Integer[] data = {1,2,3,4,5,6,7};
+        Arrays.stream(data, 3, 6).forEach(System.out::println);
 
+        Stream.of(data).map(x-> (long)x);
 
     }
 
@@ -72,11 +76,15 @@ public class streamDemo1 {
      */
     public static void interOperation() {
 
+        System.out.println("Stream 中间操作演示");
+
         List<String> strings = Arrays.asList("zhangeaky", "lisi", "wangwu", "zhangsan");
 
         long count = strings.stream().filter(string -> string.charAt(0) == 'z').count();
         System.out.println(count);
 
+        //IntStream 的 sum api 可以计算集合中的总和累加
+        //Stream的 mapInt api 可以进行流的转换。
         System.out.println(Arrays.asList(1, 2, 3, 4, 5).stream().filter(x -> x % 2 == 0).mapToInt(x -> x).sum());
 
         Optional<Integer> max = Arrays.asList(1, 2, 3, 99).stream().max((a, b) -> a - b);
@@ -93,18 +101,15 @@ public class streamDemo1 {
 
         System.out.println(first2.get());
 
-        // 集合元素过滤再返回一个新的集合元素 , 用的比较多 要注意。
-
+        /// TODO: 2022/3/28  集合元素过滤再返回一个新的集合元素 , 用的比较多 要注意。
         List<String> collect = strings.stream().filter(x -> x.charAt(0) == 'z').collect(Collectors.toList());
 
         collect.forEach(System.out::println);
 
 
         //去重操作
-
         Arrays.asList(1,1,1,1,1,2,2,2).stream().distinct().collect(Collectors.toList()).forEach(System.out::println);
         Arrays.asList(1,1,1,2,2,2,3,3,3,4,4,4).stream().collect(Collectors.toSet()).forEach(System.out::println);
-
 
         System.out.println("打印数据操作 ： ");
 
@@ -129,21 +134,17 @@ public class streamDemo1 {
         //peek()
         Stream<String> peek = Stream.of(names).peek(System.out::println);
 
-//        System.out.println(sum2);
-
         boolean q = Stream.of(names).allMatch(x -> x.charAt(0) == 'z');
         //boolean z = Stream.of(names).anyMatch(x -> x.contains('z'));
-
-
 
     }
 
     public static void main(String[] args) {
 
         //test1();
-        //generate();
+        generate();
 
-        interOperation();
+        //interOperation();
 
 
     }

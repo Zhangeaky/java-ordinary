@@ -11,10 +11,10 @@ public class AlgoTest {
             return input;
         }
 
-        for ( int i = 0; i < input.length; i ++) {
-            for (int j = i; j < input.length ; j++) {
-                if (input[j] < input[i]) {
-                    swap(j, i, input);
+        for (int i = 0 ; i < input.length-1; i++) {
+            for (int j = i +1 ; j < input.length; j++) {
+                if (input[j] < input[i] ) {
+                    swap(i, j, input);
                 }
             }
         }
@@ -24,9 +24,12 @@ public class AlgoTest {
    @Test
    public void test() {
 
+        Integer[] inputbatch = {1,5,8,6,7,1,1,9,4,1,2};
         Integer[] input = {6,5,4,3,2,1};
-       Integer[] result = sortSelect(input);
+       Integer[] result = sortSelect(inputbatch);
        Stream.of(result).forEach(System.out::println);
+
+       Stream.of(inputbatch).sorted().forEach(System.out::println);
 
 
 

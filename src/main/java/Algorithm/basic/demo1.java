@@ -9,7 +9,9 @@ package Algorithm.basic;
  *      寻址操作。赋值操作; 如果一个操作时间不固定那就不是常数时间的操作。
  *     1.2 额外空间复杂度。<> ni </>
  *
- *   2. 选择排序 冒泡排序(复杂度与数据的乱序程度吴无关) **插入排序(复杂度在好的情况下复杂度较低)**
+ *   2. 选择排序
+ *      冒泡排序(复杂度与数据的乱序程度吴无关)
+ *      **插入排序(复杂度在好的情况下复杂度较低)**
  *   3.
  *   4.
  *   5.
@@ -19,25 +21,43 @@ package Algorithm.basic;
  */
 public class demo1 {
 
+    /**
+     * 选择排序
+     * @description 左老师解法
+     * @param arr
+     */
+    public static void selectionSort(int[] arr) {
+        if (arr == null || arr.length < 2) {
+            return;
+        }
+        // 0 ~ N-1  找到最小值，在哪，放到0位置上
+        // 1 ~ n-1  找到最小值，在哪，放到1 位置上
+        // 2 ~ n-1  找到最小值，在哪，放到2 位置上
+        for (int i = 0; i < arr.length - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < arr.length; j++) { // i ~ N-1 上找最小值的下标
+                minIndex = arr[j] < arr[minIndex] ? j : minIndex;
+            }
+            swap( i, minIndex,arr);
+        }
+    }
+
 
     /**
-     *
-     *
-     *
+     * 我的解法 2022.0328
+     * @description : 选择排序
      * @param input
      * @return
      */
     public static int[] sortSelect(int[] input) {
-
-        //边界条件
-        if ( input == null || input.length < 2 ) {
+        if (input == null || input.length < 2 ) {
             return input;
         }
 
-        for (int i = 0; i < input.length; i++) {
-            for (int j = i; j < input.length; j++) {
-                if (input[j] < input[i]) {
-                    swap(j, i, input);
+        for (int i = 0 ; i < input.length-1; i++) {
+            for (int j = i +1 ; j < input.length; j++) {
+                if (input[j] < input[i] ) {
+                    swap(i, j, input);
                 }
             }
         }
