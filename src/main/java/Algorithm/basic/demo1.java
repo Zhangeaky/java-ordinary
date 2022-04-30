@@ -21,6 +21,28 @@ package Algorithm.basic;
  */
 public class demo1 {
 
+    public static int[] temp(int[] input) {
+
+        if (input == null || input.length < 2) {
+            return input;
+        }
+        //
+        for (int i = 0; i < input.length-1; i++) {
+
+            int min_index = i;
+            for (int j = i; j <= input.length-1; j++) {
+
+                min_index = input[min_index] > input[j] ? j : min_index;
+
+            }
+
+            swap(i, min_index, input);
+        }
+
+        return input;
+
+    }
+
     /**
      * 选择排序
      * @description 左老师解法

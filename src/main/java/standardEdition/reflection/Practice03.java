@@ -1,6 +1,6 @@
 package standardEdition.reflection;
 
-import standardEdition.reflection.bean.Person;
+import bean.Person;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;

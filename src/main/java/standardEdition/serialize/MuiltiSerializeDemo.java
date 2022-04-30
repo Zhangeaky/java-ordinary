@@ -13,8 +13,8 @@ import standardEdition.serialize.beans.computer;
  * @Version 1.0
  *
  */
-public class MuiltiSerializeDemo {
-
+public class MuiltiSerializeDemo implements Serializable{
+    
     public static void main(String[] args) throws IOException, ClassNotFoundException {
 
         computer computer = new computer();

@@ -66,7 +66,7 @@ public class Practice01 {
 
         //newInstance() 调用无参构造
 
-        Class<?> personClass = Class.forName("standardEdition.reflection.bean.Person");
+        Class<?> personClass = Class.forName("bean.Person");
         try {
             Object person = personClass.newInstance();
             System.out.println(person);

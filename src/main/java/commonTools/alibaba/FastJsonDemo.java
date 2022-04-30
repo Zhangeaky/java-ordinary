@@ -1,6 +1,6 @@
 package commonTools.alibaba;
 
-import bean.Person;
+import bean.tmp;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 
@@ -32,15 +32,15 @@ public class FastJsonDemo {
         System.out.println(mapJson);
         //输出：{"key1":"One","key2":"Two"}
 
-        Person zhangyikai = new Person();
+        tmp zhangyikai = new tmp();
         zhangyikai.setId("328153");
         zhangyikai.setName("yida");
 
-        Person jackma = new Person();
+        tmp jackma = new tmp();
         jackma.setId("000001");
         jackma.setName("fengqingyang");
 
-        List<Person> perssonList = Arrays.asList(zhangyikai,jackma);
+        List<tmp> perssonList = Arrays.asList(zhangyikai,jackma);
         String personListJson = JSON.toJSONString(perssonList);
         System.out.println("person list json" + personListJson);
     }
@@ -49,7 +49,7 @@ public class FastJsonDemo {
 
         String jsonStr = "{\"key1\": {\"name\":\"zhangeaky\",\"id\":\"18\"},\"key2\":\"110\"}";
         JSONObject jsonObject = JSONObject.parseObject(jsonStr);
-        Person key1 = jsonObject.getObject("key1", Person.class);
+        tmp key1 = jsonObject.getObject("key1", tmp.class);
         System.out.println(key1);
         System.out.println(jsonObject.getString("key1"));//输出one
         System.out.println(jsonObject.getInteger("key2"));//输出110

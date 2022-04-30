@@ -22,6 +22,8 @@ public class StreamDemo2 {
                 .distinct()
                 .forEach(System.out::println);
 
+        System.out.println(numbers.stream().filter(x -> x.charAt(0) == '0').findAny().map(x -> x + 1).get());
+
 
     }
 }
