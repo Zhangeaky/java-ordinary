@@ -103,14 +103,17 @@ public class demo {
         getName.invoke(newone);
 
         /**
-         * 获取所有的构造函数
+         * 获取所有的构造函数，构造函数是不能继承的
          *
+         * 反射创建对象 调用了无参构造函数
          */
 
         Constructor[] declaredConstructors = clazz.getDeclaredConstructors();
 
         Constructor declaredConstructor = clazz.getDeclaredConstructor();
         Object o1 = declaredConstructor.newInstance();
+
+        //Number
 
 
     }
