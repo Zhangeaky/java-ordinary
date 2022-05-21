@@ -3,6 +3,7 @@ package commonTools.alibaba;
 import bean.tmp;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.JSONPath;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -59,13 +60,21 @@ public class FastJsonDemo {
 
     }
 
+    public static void testSet() {
 
+        String jsonStr = "{\"key1\": {\"name\":\"zhangeaky\",\"id\":\"18\"},\"key2\":\"110\"}";
+        JSONObject jsonObject = JSONObject.parseObject(jsonStr);
 
+        JSONPath.set(jsonObject,"$key2","22");
+        System.out.println(jsonObject.toJSONString());
+
+    }
 
     public static void main(String[] args) {
 
         //test();
-        test2();
+        //test2();
+        testSet();
 
     }
     //
