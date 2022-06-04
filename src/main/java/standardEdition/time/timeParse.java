@@ -14,12 +14,15 @@ public class timeParse {
 
     private static final String TIME = "2020-01-02T22:00:00+08:30";
 
+    private static final TimeZone TIME_ZONE = TimeZone.getTimeZone("UTC:+0830");
 
-    private static final FastDateFormat format = FastDateFormat.getInstance("yyyy-MM-dd'T'HH:mm:ssZZ");
+
+    private static final FastDateFormat format = FastDateFormat.getInstance("yyyy-MM-dd'T'HH:mm:ssZZ", TIME_ZONE);
     
     
     public static void main(String[] args) throws ParseException {
 
+        System.out.println(TIME_ZONE);
         Date parse = format.parse(TIME);
         System.out.println(parse);
         System.out.println(format.format(parse));
