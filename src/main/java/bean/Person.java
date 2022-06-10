@@ -1,6 +1,6 @@
 package bean;
 
-import standardEdition.reflection.bean.AbstractPerson;
+import se.reflection.bean.AbstractPerson;
 
 public class Person extends AbstractPerson {
 
