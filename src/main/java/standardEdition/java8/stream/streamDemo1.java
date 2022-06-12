@@ -60,8 +60,6 @@ public class streamDemo1 {
         IntStream chars = name.chars();
         chars.forEach(System.out::println);
 
-
-
     }
 
     /**
