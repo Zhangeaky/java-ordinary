@@ -1,5 +1,6 @@
 package se.io.nettysth;
 
+import io.netty.bootstrap.Bootstrap;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.*;
@@ -62,4 +63,33 @@ class temp {
         bind.sync().channel().closeFuture().sync();
 
     }
+}
+
+class test1 {
+
+    static class testHandler extends ChannelInboundHandlerAdapter {
+
+
+        @Override
+        public void channelActive(ChannelHandlerContext ctx) throws Exception {
+
+            System.out.println("new connect ...");
+
+        }
+
+    }
+
+    public static void main(String[] args) {
+
+        Bootstrap bs = new Bootstrap();
+        NioEventLoopGroup group = new NioEventLoopGroup();
+        bs.group(group)
+                .channel(NioServerSocketChannel.class)
+                .handler(new testHandler())
+                .connect(new InetSocketAddress(9888));
+
+        System.out.println("over");
+
+    }
+
 }

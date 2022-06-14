@@ -1,4 +1,6 @@
 package se.reflection.bean;
 
-public abstract class AbstractPerson {
+import java.io.Serializable;
+
+public abstract class AbstractPerson implements Serializable {
 }
