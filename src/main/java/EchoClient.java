@@ -7,6 +7,7 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.util.CharsetUtil;
 
 import java.net.InetSocketAddress;
+import java.util.UUID;
 
 public class EchoClient {
     public static void main(String[] args) throws InterruptedException {
@@ -14,7 +15,7 @@ public class EchoClient {
 
         Bootstrap bootstrap = new Bootstrap().group(group)
                 .channel(NioSocketChannel.class)
-                .remoteAddress(new InetSocketAddress("127.0.0.1", 8801))
+                .remoteAddress(new InetSocketAddress("127.0.0.1", 12220))
                 .handler(new ChannelInitializer<NioSocketChannel>() {
                     @Override
                     protected void initChannel(NioSocketChannel ch) throws Exception {
@@ -35,7 +36,6 @@ public class EchoClient {
 
 class ClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
 
-
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         System.out.println("[CLIENT] one connetion get !");
@@ -46,5 +46,9 @@ class ClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, ByteBuf msg) throws Exception {
         System.out.println("[CLIENT] received msg: " + msg.toString(CharsetUtil.UTF_8));
+    }
+
+    public static void main(String[] args) {
+        //System.out.println(UUID.randomUUID().toString().replace('-', '') ;
     }
 }

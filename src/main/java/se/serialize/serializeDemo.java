@@ -1,5 +1,6 @@
 package se.serialize;
 
+import bean.Person;
 import se.serialize.beans.SingletonDoctorStrange;
 import se.serialize.beans.employee;
 import se.serialize.beans.manager;
@@ -88,7 +89,6 @@ public class serializeDemo {
 
             SingletonDoctorStrange instance = SingletonDoctorStrange.INSTANCE;
 
-
             try ( ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(FILE));) {
 
                 out.writeObject(instance);
@@ -112,9 +112,40 @@ public class serializeDemo {
             }
         }
     }
+}
+
+/**
+ *
+ * 使用字节数组进行对象的序列化
+ *
+ */
+class ArrayGo {
+
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+
+        Person pp = new Person();
+        pp.setAge(100);
+        pp.setName("rpc");
+
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
 
 
+        ObjectOutputStream ser = new ObjectOutputStream(stream);
+
+        ser.writeObject(pp);
+
+        byte[] ppByteArray = stream.toByteArray();
+
+        ByteArrayInputStream inputStream = new ByteArrayInputStream(ppByteArray);
+
+        ObjectInputStream reader = new  ObjectInputStream(inputStream);
+
+        Person result =  (Person) reader.readObject();
+
+        System.out.println("" + result.getAge());
+        System.out.println("" + result.getName());
 
 
+    }
 
 }
