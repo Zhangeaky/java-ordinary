@@ -1,4 +1,4 @@
-package GoF23.ListenerPatter;
+package gof23.ListenerPatter;
 
 import java.util.HashMap;
 import java.util.Map;

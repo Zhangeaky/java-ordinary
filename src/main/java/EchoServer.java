@@ -34,7 +34,7 @@ public class EchoServer {
 
         ChannelFuture future = bootstrap.bind().sync();
 
-        future.channel().closeFuture().sync();
+        //future.channel().closeFuture().sync();
 
         System.out.println("...");
 
@@ -49,20 +49,21 @@ class MyHander extends ChannelInboundHandlerAdapter {
 
 
         ByteBuf content = (ByteBuf) msg;
+        System.out.println("hashcode: " + msg.hashCode());
 
 
-        if (content.readableBytes() > 89) {
-            System.out.println("readable sizes: " + content.readableBytes());
-            ByteBuf byteBuf = content.readBytes(89);
-
-            byte[] array = byteBuf.array();
-
-            ByteArrayInputStream in = new ByteArrayInputStream(array);
-
-            ObjectInputStream objectInputStream = new ObjectInputStream(in);
-            Object o = objectInputStream.readObject();
-            System.out.println(o.getClass());
-        }
+//        if (content.readableBytes() > 89) {
+//            System.out.println("readable sizes: " + content.readableBytes());
+//            ByteBuf byteBuf = content.readBytes(89);
+//
+//            byte[] array = byteBuf.array();
+//
+//            ByteArrayInputStream in = new ByteArrayInputStream(array);
+//
+//            ObjectInputStream objectInputStream = new ObjectInputStream(in);
+//            Object o = objectInputStream.readObject();
+//            System.out.println(o.getClass());
+//        }
 
         //System.out.println("[Server] received msg: " + content.toString(CharsetUtil.US_ASCII));
         //ctx.write(content);

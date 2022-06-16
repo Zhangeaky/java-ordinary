@@ -5,9 +5,7 @@ import com.sun.tools.hat.internal.model.HackJavaValue;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.UnpooledByteBufAllocator;
-import io.netty.channel.Channel;
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelInitializer;
+import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import se.io.nettysth.GenericHanlder;
@@ -114,7 +112,12 @@ public class RPCTest {
                             @Override
                             protected void initChannel(NioSocketChannel ch) throws Exception {
 
-                                ch.pipeline().addLast(new GenericHanlder());
+                                ch.pipeline().addLast(new SimpleChannelInboundHandler<Object>() {
+                                    @Override
+                                    protected void channelRead0(ChannelHandlerContext ctx, Object msg) throws Exception {
+                                        System.out.println("response" + msg);
+                                    }
+                                });
 
                             }
                         });
@@ -122,10 +125,14 @@ public class RPCTest {
 
                 try {
 
-                    Channel channel = connect.sync().channel();
+                    ChannelFuture sync = connect.sync();
+
+                    Channel channel = sync.channel();
+
                     pool.writeBytes(byteHeader);
                     pool.writeBytes(byteLoad);
                     ChannelFuture future = channel.writeAndFlush(pool);
+
 
                 }catch (Exception e) {
                     e.printStackTrace();

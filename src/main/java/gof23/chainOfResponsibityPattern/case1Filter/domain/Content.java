@@ -1,4 +1,4 @@
-package GoF23.chainOfResponsibityPattern.case1Filter.domain;
+package gof23.chainOfResponsibityPattern.case1Filter.domain;
 
 public class Content {
     private String content;

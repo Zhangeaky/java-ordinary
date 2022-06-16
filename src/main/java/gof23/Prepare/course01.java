@@ -1,4 +1,4 @@
-package GoF23.Prepare;
+package gof23.Prepare;
 
 public class course01 {
 

@@ -1,6 +1,6 @@
-package GoF23.chainOfResponsibityPattern.case1Filter;
+package gof23.chainOfResponsibityPattern.case1Filter;
 
-import GoF23.chainOfResponsibityPattern.case1Filter.domain.Content;
+import gof23.chainOfResponsibityPattern.case1Filter.domain.Content;
 
 public class PornWordsFilter implements SensitiveWordFilter{
 

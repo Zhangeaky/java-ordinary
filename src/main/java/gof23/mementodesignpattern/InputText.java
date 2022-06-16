@@ -1,4 +1,4 @@
-package GoF23.mementodesignpattern;
+package gof23.mementodesignpattern;
 
 public class InputText {
 

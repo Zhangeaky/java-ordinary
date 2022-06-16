@@ -1,4 +1,4 @@
-package GoF23.constructorPattern;
+package gof23.constructorPattern;
 
 public class ResourceConfigPool {
 
