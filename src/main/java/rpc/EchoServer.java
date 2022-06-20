@@ -1,3 +1,5 @@
+package rpc;
+
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -5,7 +7,6 @@ import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import io.netty.util.CharsetUtil;
 
 import java.io.ByteArrayInputStream;
 import java.io.ObjectInputStream;
@@ -28,15 +29,17 @@ public class EchoServer {
                 .childHandler(new ChannelInitializer<NioSocketChannel>() {
                     @Override
                     protected void initChannel(NioSocketChannel ch) throws Exception {
+                        ChannelPipeline pipeline = ch.pipeline();
+                        pipeline.addLast(new MyDecoder());
                         ch.pipeline().addLast(hander);
                     }
                 });
 
         ChannelFuture future = bootstrap.bind().sync();
 
-        //future.channel().closeFuture().sync();
+        future.channel().closeFuture().sync();
 
-        System.out.println("...");
+        //System.out.println("...");
 
     }
 }
@@ -45,28 +48,18 @@ public class EchoServer {
 class MyHander extends ChannelInboundHandlerAdapter {
 
     @Override
+    public void channelActive(ChannelHandlerContext ctx) throws Exception {
+        System.out.println("[server] get one conneciton.");
+    }
+
+    @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
 
+        System.out.println(msg.getClass());
+        Integer content = (Integer) msg;
+        System.out.println("[server]: msg is: " + msg);
 
-        ByteBuf content = (ByteBuf) msg;
-        System.out.println("hashcode: " + msg.hashCode());
 
-
-//        if (content.readableBytes() > 89) {
-//            System.out.println("readable sizes: " + content.readableBytes());
-//            ByteBuf byteBuf = content.readBytes(89);
-//
-//            byte[] array = byteBuf.array();
-//
-//            ByteArrayInputStream in = new ByteArrayInputStream(array);
-//
-//            ObjectInputStream objectInputStream = new ObjectInputStream(in);
-//            Object o = objectInputStream.readObject();
-//            System.out.println(o.getClass());
-//        }
-
-        //System.out.println("[Server] received msg: " + content.toString(CharsetUtil.US_ASCII));
-        //ctx.write(content);
     }
 
     @Override

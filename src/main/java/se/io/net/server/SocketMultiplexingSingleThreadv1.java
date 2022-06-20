@@ -83,6 +83,10 @@ public class SocketMultiplexingSingleThreadv1 {
                     //我前边可以强调过，socket有两种描述符：  监听状态listen描述符   数据通信描述符 R/W
                     while (iter.hasNext()) {
                         SelectionKey key = iter.next();
+                        /**
+                         * 为什么要remove
+                         *
+                         */
                         iter.remove(); //set  不移除会重复循环处理
                         if (key.isAcceptable()) {
                             //看代码的时候，这里是重点，如果要去接受一个新的连接

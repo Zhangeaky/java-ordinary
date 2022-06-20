@@ -1,4 +1,4 @@
-package Enum;
+package se.enumlearning;
 
 public enum MyResultCode {
 
