@@ -3,8 +3,9 @@ package se.collections;
 import com.google.common.collect.ImmutableMap;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
-import java.util.logging.Handler;
+import java.util.Set;
 
 public class CollectionsTraverseDemo {
 
@@ -20,6 +21,14 @@ public class CollectionsTraverseDemo {
         names.put("b", "b");
     }
 
+    public static void showSet() {
+
+        Set<String> strings = map.keySet();
+        Set<Map.Entry<String, String>> entries = map.entrySet();
+
+
+
+    }
 
     /**
      * Entry HashMap中是 Nodes实现
@@ -39,15 +48,32 @@ public class CollectionsTraverseDemo {
         for (String key:map.keySet()) {
             System.out.println("Key is: " + key);
         }
+
+
+        System.out.println("-----map.entrySet().iterator 遍历------");
+
+        Set<Map.Entry<String, String>> entries = map.entrySet();
+        Iterator<Map.Entry<String, String>> iterator = entries.iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<String, String> next = iterator.next();
+            String value = next.getValue();
+            String key = next.getKey();
+            System.out.println("[key]: " + key + "[value]: " + value);
+        }
+
+
     }
 
     public static void main(String[] args) {
 
-       // traverseMap();
+        traverseMap();
 
         Map<String, String> hashMap = new HashMap<>();
 
-        System.out.println(names.entrySet().getClass().getCanonicalName());
+        Set<Map.Entry<String, String>> entries = hashMap.entrySet();
+
+
+        //System.out.println(names.entrySet().getClass().getCanonicalName());
 
 
         //System.out.println(hashMap.get(""));
