@@ -11,7 +11,7 @@ import se.basic.accessibility.classCollection;
 public class test {
 
     public static void main(String[] args) {
-        new classCollection();
-        // new
+
+        StaticClassDemo.staticInnerDemo dd = new StaticClassDemo.staticInnerDemo();
     }
 }

@@ -1,15 +1,11 @@
 package se.collections.set;
 
-import jdk.nashorn.internal.runtime.regexp.joni.ast.StringNode;
-
 import java.util.HashSet;
 import java.util.Set;
 
 public class HashSetDemo {
 
     private static Set<Integer> numbers = new HashSet<>(10);
-
-    private static HashSet<String> aNewSet = new HashSet<String>(10, 0.75, true);
 
     public static void main(String[] args) {
 
