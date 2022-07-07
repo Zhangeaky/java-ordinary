@@ -1,4 +1,4 @@
-package JVM.classFile;
+package jvm.classFile;
 
 /**
  * @Author: jiegege

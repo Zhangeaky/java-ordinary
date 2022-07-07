@@ -1,5 +1,7 @@
 package se.collections;
 
+import se.basic.StaticClassDemo;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -17,6 +19,8 @@ public class DemoTest {
 
 
     public static void main(String[] args) {
+
+
         Collection<String> container = new ArrayList<>(5);
 
         container.add("yida");

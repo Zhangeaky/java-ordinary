@@ -1,4 +1,4 @@
-package JVM.classLoader;
+package jvm.classLoader;
 
 import java.lang.reflect.Method;
 import java.net.URL;
@@ -27,7 +27,7 @@ public class ClassLoaderDeepUnderStanding {
 
         System.out.println("CustomizedClassLoader 的 类加载器为 : " + loader.getClass().getClassLoader());
         //tool tool = (loader.loadClass("JVM.classLoader.tool"))loader.loadClass().newInstance();
-        Class<?> aClass = loader.loadClass("JVM.classLoader.tool");
+        Class<?> aClass = loader.loadClass("jvm.classLoader.tool");
         Object o = aClass.newInstance();
         System.out.println(o.getClass().getClassLoader());
 
@@ -50,7 +50,7 @@ public class ClassLoaderDeepUnderStanding {
         public static void main(String[] args) throws ClassNotFoundException {
 
             ClassLoader classLoader = ClassLoaderDeepUnderStanding.class.getClassLoader();
-            Class<?> aClass = classLoader.loadClass("JVM.garbage.FinalizeEscape");
+            Class<?> aClass = classLoader.loadClass("jvm.garbage.FinalizeEscape");
             Method[] declaredMethods = aClass.getDeclaredMethods();
 
             for (Method method:declaredMethods) {

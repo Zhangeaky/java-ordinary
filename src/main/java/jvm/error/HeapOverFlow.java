@@ -1,4 +1,4 @@
-package JVM.error;
+package jvm.error;
 
 import java.util.ArrayList;
 import java.util.List;

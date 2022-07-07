@@ -1,4 +1,4 @@
-package JVM.garbage;
+package jvm.garbage;
 
 /**
  * @Author: jiegege

@@ -1,4 +1,4 @@
-package JVM.classFile;
+package jvm.classFile;
 
 import java.util.ArrayList;
 

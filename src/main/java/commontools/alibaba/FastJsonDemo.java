@@ -1,10 +1,13 @@
-package commonTools.alibaba;
+package commontools.alibaba;
 
+import bean.javabean.Apple;
+import bean.javabean.Fruit;
 import bean.tmp;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.JSONPath;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -23,6 +26,54 @@ import java.util.Map;
  * @Version 1.0
  */
 public class FastJsonDemo {
+
+    static class Model{
+
+        public Model(String serial, Fruit fruit) {
+            this.serial = serial;
+            this.fruit = fruit;
+        }
+
+        private String serial;
+        private Fruit fruit;
+
+        public String getSerial() {
+            return serial;
+        }
+
+        public void setSerial(String serial) {
+            this.serial = serial;
+        }
+
+        public Fruit getFruit() {
+            return fruit;
+        }
+
+        public void setFruit(Fruit fruit) {
+            this.fruit = fruit;
+        }
+    }
+
+    /**
+     * JSON.XXXX
+     */
+    public static void JSONTest() {
+
+        Apple apple = new Apple("hongfushi ", new BigDecimal(0.3));
+
+        String appleJson = JSON.toJSONString(apple);
+
+        System.out.println("[appleJson]: " + appleJson);
+
+        Model model = new Model("1500", apple);
+        String modelJson = JSON.toJSONString(model);
+        System.out.println("[modelJson]: " + modelJson);
+
+        Model mm = JSON.parseObject(modelJson, Model.class);
+        System.out.println(mm);
+
+
+    }
 
     //按照JSON格式输出map字符串
     public static void test() {
@@ -74,7 +125,8 @@ public class FastJsonDemo {
 
         //test();
         //test2();
-        testSet();
+        //testSet();
+        JSONTest();
 
     }
     //

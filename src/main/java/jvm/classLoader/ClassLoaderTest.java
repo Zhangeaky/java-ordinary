@@ -1,4 +1,4 @@
-package JVM.classLoader;
+package jvm.classLoader;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -47,7 +47,7 @@ public class ClassLoaderTest {
         };
 
         tool too = new tool();
-        Object ob = loader.loadClass("JVM.classLoader.tool").newInstance();
+        Object ob = loader.loadClass("jvm.classLoader.tool").newInstance();
         System.out.println(loader);
         System.out.println(loader.getParent());
         System.out.println(ob.getClass().getClassLoader());

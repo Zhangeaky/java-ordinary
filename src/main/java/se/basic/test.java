@@ -1,5 +1,4 @@
 package se.basic;
-import se.basic.accessibility.classCollection;
 //import SE.basic.accessibility.classCollection.
 /**
  * @Author: jiegege

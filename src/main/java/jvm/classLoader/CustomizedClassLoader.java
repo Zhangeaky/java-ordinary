@@ -1,4 +1,4 @@
-package JVM.classLoader;
+package jvm.classLoader;
 
 import java.io.IOException;
 import java.io.InputStream;

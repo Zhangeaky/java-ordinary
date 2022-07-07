@@ -1,4 +1,4 @@
-package JVM.classLoader.initialization;
+package jvm.classLoader.initialization;
 
 import java.io.IOException;
 
