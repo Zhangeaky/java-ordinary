@@ -33,14 +33,16 @@ public class streamDemo1 {
      */
     public static void generate() {
 
+        System.out.println("创建流的方式演示： ");
+
         // 1. Stream.of() 针对数组类型创建流
-        System.out.println("Stream.of 创建: 用于将数组创建成流 ");
+        System.out.println("1. Stream.of 创建: 用于将数组创建成流 ");
         String[] arrs = {"a","fd","g"};
         Stream<String> arrs1 = Stream.of(arrs);
         arrs1.forEach(System.out::println);//运用到 conumser
 
         // 2. Colletion.stream()
-        System.out.println("使用Colletion 集成stream()方法");
+        System.out.println("2. 使用Colletion 集成stream()方法");
         List<String> stringList = Arrays.asList(arrs);
         Stream<String> stream = stringList.stream();
         stream.forEach(System.out::println);
@@ -101,6 +103,7 @@ public class streamDemo1 {
 
         /// TODO: 2022/3/28  集合元素过滤再返回一个新的集合元素 , 用的比较多 要注意。
         List<String> collect = strings.stream().filter(x -> x.charAt(0) == 'z').collect(Collectors.toList());
+
 
         collect.forEach(System.out::println);
 
