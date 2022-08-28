@@ -34,7 +34,7 @@
 
 
 
-
+    <bean id="javaperson" class="se.javaBeans.person"></bean>
     
     
     

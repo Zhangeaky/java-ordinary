@@ -20,6 +20,16 @@ public class StreamDemo3 {
         players.add(new BasketBallPlayer("George. P", 28.0, 8.2, 4.1, POSITION.SHOTTING_GUARD, "13"));
         players.add(new BasketBallPlayer("Antetokounpo. G", 27.7, 13.7, 5.8, POSITION.CENTER, "34"));
         players.add(new BasketBallPlayer("Embid. J", 27.5, 13.6, 3.7, POSITION.CENTER ,"21"));
+        players.add(new BasketBallPlayer("Curry. S", 27.3, 5.3, 5.2, POSITION.POINT_GUARD ,"30"));
+        players.add(new BasketBallPlayer("Leonard. K", 26.6, 7.3, 3.3, POSITION.SCORE_FORWARD ,"2"));
+        players.add(new BasketBallPlayer("Booker. d", 26.6, 4.1, 6.8, POSITION.SCORE_FORWARD ,"2"));
+        players.add(new BasketBallPlayer("Durant. K", 26.0, 6.8, 5.4, POSITION.SCORE_FORWARD ,"2"));
+        players.add(new BasketBallPlayer("Lillard. D", 25.8, 4.6, 6.9, POSITION.SCORE_FORWARD ,"2"));
+        players.add(new BasketBallPlayer("Walker. K", 25.6, 4.4, 5.9, POSITION.SCORE_FORWARD ,"2"));
+        players.add(new BasketBallPlayer("Beal. B", 25.6, 5.0, 5.5, POSITION.SCORE_FORWARD ,"1"));
+        players.add(new BasketBallPlayer("Griffin. B", 24.5, 7.5, 5.4, POSITION.SCORE_FORWARD ,"32"));
+        players.add(new BasketBallPlayer("Towns. K-A", 24.4, 12.4, 3.4, POSITION.SCORE_FORWARD ,"2"));
+        players.add(new BasketBallPlayer("Irving. K", 23.8, 5.0, 6.9, POSITION.SCORE_FORWARD ,"2"));
 
         players.get(0).setHornors(Arrays.asList("MVP", "得分王", "助攻王", "第一阵容"));
         players.get(1).setHornors(Arrays.asList("第一阵容"));
@@ -63,6 +73,47 @@ public class StreamDemo3 {
         System.out.println(count);
 
     }
+
+    // 查找和匹配
+    public  static void test04() {
+
+        Optional<BasketBallPlayer> first = players.stream().findFirst();
+        Optional<BasketBallPlayer> any = players.stream().findAny();
+
+        BasketBallPlayer basketBallPlayer = first.get();
+
+    }
+
+
+    /**
+     * 对流进行收集
+     */
+    public static void test05() {
+
+        //players.stream().collect(Collectors.toList())
+
+    }
+
+    // 规约
+    public static void test03(){
+
+        // 将Harden 和其他球员分为一类
+        Map<String, List<BasketBallPlayer>> collect = players.stream().collect(Collectors.groupingBy((x) -> {
+            if (x.getName().equals("Harden. J")) {
+                return "得分王";
+            } else {
+                return "其他";
+            }
+        }));
+
+        System.out.println(collect);
+
+
+
+
+    }
+
+
 
     public static void main(String[] args) {
 
@@ -133,15 +184,51 @@ public class StreamDemo3 {
         }
 
 
+        test03();
+
+
 
     }
 }
 
+
+/**
+ *  given two list [1, 2, 3]  [2, 4]
+ *  generate lists such as [1, 2] [1, 4] for response
+ *
+ *
+ */
 class test2 {
     public static void main(String[] args) {
 
-        //StreamDemo3.test01();
-        StreamDemo3.test02();
+        List<Integer> l1 = Arrays.asList(1, 2, 3);
+        List<Integer> l2 = Arrays.asList(2, 4);
+
+        List<Integer[]> collect = l1.stream()
+                .flatMap(x ->
+                        l2.stream().map(y -> new Integer[]{x, y})  // 这段代码产生的是若干个流 只能使用flatmap去承接
+                ).collect(Collectors.toList());
+
+        collect.stream().map(Arrays::asList).forEach(System.out::println);
+
+        // 生成可以被 5 整除的流
+        List<Integer[]> collect1 = l2.stream().flatMap(x ->
+                l1.stream().filter(y -> (x + y) % 5 == 0)
+                        .map(y -> new Integer[]{y, x})
+        ).collect(Collectors.toList());
+
+        collect1.stream().forEach( x -> {
+
+            List<Integer> integers = Arrays.asList(x);
+            integers.stream().forEach(System.out::println);
+        });
+
+        long count = Stream.of(l1, l2).count();
+        Stream.of(l1, l2).forEach(System.out::println);
+        System.out.println(Stream.of(l1, l2));
+
+        System.out.println("count: " + count);
+
 
 
     }

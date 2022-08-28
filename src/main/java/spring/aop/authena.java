@@ -8,7 +8,6 @@ public class authena {
 
     public static void main(String[] args) {
 
-        ProxyFactory
 
 
     }

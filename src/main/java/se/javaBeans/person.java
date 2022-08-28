@@ -12,6 +12,9 @@ import lombok.Data;
 
 @Data
 public class person {
+    static {
+        System.out.println("[实例化] ... ");
+    }
     private String name;
     private Integer age;
 }
