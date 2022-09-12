@@ -1,7 +1,5 @@
 package se;
 
-import bean.Person;
-
 public class StringUtils {
     public static void main(String[] args) {
 

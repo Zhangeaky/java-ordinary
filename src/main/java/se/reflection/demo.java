@@ -1,7 +1,7 @@
 package se.reflection;
 
 
-import bean.Person;
+import se.bean.Person;
 
 import java.lang.reflect.*;
 import java.util.stream.Stream;
@@ -27,7 +27,7 @@ public class demo {
         Class intPrimitive = Integer.TYPE;
         System.out.println("int 基础类型的Class, "+ (int.class == intPrimitive));
 
-        Class clazz = Class.forName("bean.Person");
+        Class clazz = Class.forName("se.bean.Person");
 
         System.out.println(LINE);
         /**

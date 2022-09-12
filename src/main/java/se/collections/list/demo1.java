@@ -1,9 +1,6 @@
 package se.collections.list;
 
-import bean.Person;
-import bean.javabean.PaymentResponse;
-import com.google.common.collect.Lists;
-import se.javaBeans.person;
+import se.bean.Person;
 
 import java.util.ArrayList;
 import java.util.Arrays;

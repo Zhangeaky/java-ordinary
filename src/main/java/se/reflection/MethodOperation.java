@@ -1,6 +1,6 @@
 package se.reflection;
 
-import bean.Person;
+import se.bean.Person;
 
 import java.lang.reflect.Method;
 
@@ -13,7 +13,7 @@ public class MethodOperation {
 
         try {
 
-            Class<?> clazz = Class.forName("bean.Person");
+            Class<?> clazz = Class.forName("se.bean.Person");
 
             Method say = clazz.getMethod("say", String.class);
 

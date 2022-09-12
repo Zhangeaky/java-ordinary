@@ -1,8 +1,8 @@
 package commontools.alibaba;
 
-import bean.javabean.Apple;
-import bean.javabean.Fruit;
-import bean.tmp;
+import se.bean.javabean.Apple;
+import se.bean.javabean.Fruit;
+import se.bean.tmp;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.JSONPath;

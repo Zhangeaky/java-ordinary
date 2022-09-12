@@ -10,8 +10,8 @@
        http://www.springframework.org/schema/aop/spring-aop.xsd
 ">
 
-<!--    <bean id="waiter" class="org.springframework.aop.framework.ProxyFactoryBean">-->
-<!--    </bean>-->
+<!--    <se.bean id="waiter" class="org.springframework.aop.framework.ProxyFactoryBean">-->
+<!--    </se.bean>-->
     <context:component-scan base-package="spring.aop"/>
 
     <aop:aspectj-autoproxy/>

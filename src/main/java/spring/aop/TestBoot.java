@@ -11,7 +11,7 @@ public class TestBoot {
                 "classpath:/META-INF/spring/spring-service.xml");
 
         player bean = context.getBean(player.class);
-        //bean.say();
+        //se.bean.say();
         bean.around("yida");
 
     }

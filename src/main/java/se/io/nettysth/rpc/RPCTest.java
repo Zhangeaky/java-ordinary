@@ -1,14 +1,12 @@
 package se.io.nettysth.rpc;
 
-import bean.Person;
-import com.sun.tools.hat.internal.model.HackJavaValue;
+import se.bean.Person;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.UnpooledByteBufAllocator;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import se.io.nettysth.GenericHanlder;
 import se.io.nettysth.rpc.facade.AgreementPayService;
 import se.io.nettysth.rpc.facade.request.AgreementPayRequest;
 import se.io.nettysth.rpc.facade.response.AgreementPayResponse;

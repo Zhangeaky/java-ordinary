@@ -1,14 +1,9 @@
 package spring.ioc;
 
-import bean.Person;
 import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import javax.xml.bind.annotation.XmlAccessOrder;
 
 public class SpringBean {
 

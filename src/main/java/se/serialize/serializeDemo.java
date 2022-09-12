@@ -1,6 +1,6 @@
 package se.serialize;
 
-import bean.Person;
+import se.bean.Person;
 import se.serialize.beans.SingletonDoctorStrange;
 import se.serialize.beans.employee;
 import se.serialize.beans.manager;

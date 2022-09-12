@@ -1,7 +1,7 @@
 package spring.aop;
 
-import bean.GreetingService;
-import bean.javabean.GenericGreetingService;
+import se.bean.GreetingService;
+import se.bean.javabean.GenericGreetingService;
 import org.springframework.aop.AfterReturningAdvice;
 import org.springframework.aop.BeforeAdvice;
 import org.springframework.aop.MethodBeforeAdvice;

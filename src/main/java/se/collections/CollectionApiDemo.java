@@ -30,6 +30,7 @@ public class CollectionApiDemo {
      */
     private static void add() {
 
+
         System.out.println("[Judge]: demo1's type is " + demo1.getClass().getCanonicalName());
         System.out.println("[Judge]: demo2's type is " + demo2.getClass().getCanonicalName());
 

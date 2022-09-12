@@ -1,6 +1,6 @@
 package se.reflection;
 
-import bean.Person;
+import se.bean.Person;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;

@@ -10,7 +10,7 @@ import java.nio.charset.StandardCharsets;
  * JAVA ByteBuffer
  *
  *   ByteBuffer.allocate() 在jvm的 heap 区域分配内存
- *   ByteBuffer.directAllocate() 在 jvm heap外分配内存 节省了jvm地址空间 -> linux 地址空间翻译的性能损耗
+ *   ByteBuffer.directAllocate() 在 se.jvm heap外分配内存 节省了jvm地址空间 -> linux 地址空间翻译的性能损耗
  *
  *  FileChannel.map()  初始化分配内存至 pageCache
  *

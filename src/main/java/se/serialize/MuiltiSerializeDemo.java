@@ -21,7 +21,7 @@ public class MuiltiSerializeDemo implements Serializable{
         computer.setBrand("apple");
         computer.setOwner("zhangeaky");
 
-        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("bean.txt"));
+        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("se.bean.txt"));
 
         computerRetailer retailer = new computerRetailer();
         retailer.setLocate("china");
@@ -29,7 +29,7 @@ public class MuiltiSerializeDemo implements Serializable{
 
         out.writeObject(retailer);
 
-        ObjectInputStream in = new ObjectInputStream(new FileInputStream("bean.txt"));
+        ObjectInputStream in = new ObjectInputStream(new FileInputStream("se.bean.txt"));
 
         Object o = in.readObject();
         System.out.println(o);

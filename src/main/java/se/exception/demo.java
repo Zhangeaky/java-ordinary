@@ -59,7 +59,7 @@ public class demo {
 
     public static void tryWithResources() throws FileNotFoundException {
 
-        FileInputStream inputStream = new FileInputStream("bean.txt");
+        FileInputStream inputStream = new FileInputStream("se.bean.txt");
 
 
 
