@@ -1,6 +1,4 @@
-package Algorithm.array;
-
-import java.util.Objects;
+package algorithm.array;
 
 /**
  * @Author: jiegege

@@ -1,4 +1,4 @@
-package Algorithm.tree;
+package algorithm.tree;
 
 /**
  * @Author: jiegege

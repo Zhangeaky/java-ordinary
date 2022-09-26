@@ -98,6 +98,10 @@ public class CollectionsChapter {
         //subList();
 
         keyset();
+
+        HashMap<String, String> map = new HashMap<>(16);
+        map.put("james", "23");
+        map.get("james");
     }
 
 

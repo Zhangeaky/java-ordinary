@@ -2,7 +2,7 @@ package se.bean.javabean;
 
 import java.math.BigDecimal;
 
-public class Apple implements Fruit{
+public class Apple extends Fruit{
 
     public Apple(String name, BigDecimal price) {
         this.name = name;

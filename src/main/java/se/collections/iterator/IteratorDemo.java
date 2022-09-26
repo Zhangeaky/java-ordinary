@@ -24,6 +24,17 @@ public class IteratorDemo {
 
     }
 
+    public static void concurrentModifyException() {
+
+        Iterator<BasketBallPlayer> iterator = players.iterator();
+
+        while (iterator.hasNext()) {
+            System.out.println("log");
+            BasketBallPlayer next = iterator.next();
+            if (next.getName() != null) players.remove(next);
+        }
+    }
+
     public static void test_what_is_iterator() {
         Iterator<BasketBallPlayer> iterator = players.iterator();
         Iterator<BasketBallPlayer> iterator1 = players.iterator();
@@ -68,6 +79,22 @@ public class IteratorDemo {
 
     }
 
+    /**
+     * 创建一个集合的两个迭代器，
+     */
+    public static void two_iterators_remove() {
+
+        Iterator<BasketBallPlayer> iterator = players.iterator();
+        Iterator<BasketBallPlayer> iterator1 = players.iterator();
+        iterator.next();
+        iterator.remove();
+        iterator1.remove();
+        Iterator<BasketBallPlayer> iterator2 = players.iterator();
+        iterator2.next();
+        iterator2.remove();
+
+    }
+
 
     public static void main(String[] args) {
 
@@ -75,7 +102,11 @@ public class IteratorDemo {
 
         //listIterator_case();
 
-        test_what_is_iterator();
+        //test_what_is_iterator();
+
+        //concurrentModifyException();
+
+        two_iterators_remove();
 
 
 
