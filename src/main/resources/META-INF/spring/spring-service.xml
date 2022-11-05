@@ -8,34 +8,31 @@
        http://www.springframework.org/schema/context/spring-context-4.0.xsd
        http://www.springframework.org/schema/aop
        http://www.springframework.org/schema/aop/spring-aop.xsd
-">
+" default-autowire="byName">
 
-<!--    <se.bean id="waiter" class="org.springframework.aop.framework.ProxyFactoryBean">-->
-<!--    </se.bean>-->
-    <context:component-scan base-package="spring.aop"/>
+
+    <context:annotation-config></context:annotation-config>
+    <context:component-scan base-package="se.bean.javabean"/>
 
     <aop:aspectj-autoproxy/>
 
-    <bean  id="play" class="spring.aop.player"/>
+    <bean  id="play" class="ee.spring.aop.player"/>
 
     <aop:config>
         <aop:aspect ref="logAspect">
-
-<!--            <aop:before method=""-->
-
-
-
-
-
-
-
         </aop:aspect>
     </aop:config>
 
+    <bean id="person" class="se.bean.Person"/>
+
+    <bean id="dog" class="se.bean.javabean.animal.Dog">
+        <property name="cacheManagers">
+            <ref bean="person" />
+        </property>
+    </bean>
 
 
-    <bean id="javaperson" class="se.javaBeans.person"></bean>
-    
-    
-    
+    <bean id="myDog" class="se.bean.javabean.animal.Dog">
+    </bean>
+
 </beans>

@@ -12,5 +12,7 @@ public class testPackageAccess {
     public static void main(String[] args) {
         new one();
         new tow();
+
+
     }
 }

@@ -1,5 +1,6 @@
 package se.fanxing;
 
+import se.bean.Person;
 import se.fanxing.bean.Animal;
 import se.fanxing.bean.Bird;
 import se.fanxing.bean.Tiger;
@@ -35,6 +36,20 @@ public class Demo1 {
 
 
         animals.forEach(Animal::doSth);
+    }
+
+    public static void test02() {
+        // 不使用泛型参数 raw of use a parameterized collections
+        // 集合中就会默认使用 Object
+        List box = new ArrayList();
+        box.add(new Person());
+        box.add(new Bird());
+
+
+        List box2 = new ArrayList();
+        box2.add(new Bird());
+        box2.add(new Tiger());
+
     }
 
     public static void main(String[] args) {

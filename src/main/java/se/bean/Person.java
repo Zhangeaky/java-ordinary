@@ -1,13 +1,26 @@
 package se.bean;
 
+import org.springframework.stereotype.Component;
+import se.bean.javabean.animal.Dog;
 import se.reflection.bean.AbstractPerson;
 
 import java.util.Objects;
 
+@Component("owner")
 public class Person extends AbstractPerson {
 
-    private String name = "zhang";
-    private Integer age = 18;
+    private String name;
+    private Integer age;
+
+    private Dog dog;
+
+    public Dog getDog() {
+        return dog;
+    }
+
+    public void setDog(Dog dog) {
+        this.dog = dog;
+    }
 
     public Person(String test) {
         System.out.println("test construct， 公有有参构造函数");
@@ -39,6 +52,7 @@ public class Person extends AbstractPerson {
         return "Person{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
+                ", dog=" + dog +
                 '}';
     }
 

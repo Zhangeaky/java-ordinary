@@ -1,4 +1,4 @@
-package spring.aop;
+package ee.spring.aop;
 
 
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -23,7 +23,7 @@ public class LogAspect {
     }
 
 
-    @Around("execution(public String spring.aop.player.around(String))")
+    @Around("execution(public String ee.spring.aop.player.around(String))")
     public void aroundType(ProceedingJoinPoint p) {
         System.out.println("[around]");
         try {

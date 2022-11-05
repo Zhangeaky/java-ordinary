@@ -1,4 +1,4 @@
-package spring.aop;
+package ee.spring.aop;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

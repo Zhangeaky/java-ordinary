@@ -12,8 +12,6 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="java-se-learning" target="1.8" />
-      <module name="javaSELearning" target="1.8" />
-      <module name="src" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

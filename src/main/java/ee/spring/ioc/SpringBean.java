@@ -1,4 +1,4 @@
-package spring.ioc;
+package ee.spring.ioc;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor;
@@ -32,7 +32,7 @@ public class SpringBean {
 
         beanFactory.addBeanPostProcessor(new yidaBeforeInstantiationBeanPostProcessor());
 
-        reader.loadBeanDefinitions("classpath:/META-INF/spring/spring-service.xml");
+        reader.loadBeanDefinitions("classpath:/META-INF/ee.spring/ee.spring-service.xml");
         beanFactory.getBean(se.javaBeans.person.class);
 
         //ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext();

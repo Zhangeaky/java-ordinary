@@ -1,4 +1,4 @@
-package spring.aop;
+package ee.spring.aop;
 
 import org.springframework.cglib.proxy.Callback;
 import org.springframework.cglib.proxy.Enhancer;

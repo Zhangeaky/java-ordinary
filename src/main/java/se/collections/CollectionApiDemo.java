@@ -1,5 +1,7 @@
 package se.collections;
 
+import com.google.common.collect.Lists;
+
 import java.util.*;
 
 /**
@@ -88,10 +90,35 @@ public class CollectionApiDemo {
 
     }
 
+    private static void retain() {
+
+
+
+        List<String> one = new ArrayList<>();
+        one.add("1");
+        one.add("2");
+        one.add("3");
+        one.add("4");
+        one.add("5");
+
+        List<String> two = new ArrayList<>();
+        two.add("4");
+        two.add("2");
+        two.add("1");
+
+        System.out.println("original: one " + one);
+        System.out.println("original: two " + two );
+        System.out.println(one.retainAll(two));
+        System.out.println(one);
+
+
+    }
+
     public static void main(String[] args) {
 
         //add();
-        contains();
+        //contains();
+        retain();
 
     }
 }

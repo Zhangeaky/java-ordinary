@@ -1,5 +1,8 @@
 package se.bean.javabean.animal;
 
+import org.springframework.stereotype.Component;
+import se.bean.Person;
+
 import java.util.Objects;
 
 public class Dog {
@@ -7,6 +10,8 @@ public class Dog {
     private String name;
 
     private String type;
+
+    private Person owner;
 
     @Override
     public boolean equals(Object o) {
@@ -35,5 +40,26 @@ public class Dog {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public void setCacheManagers(Person person) {
+        System.out.println("Hello world " + person);
+    }
+
+    public Person getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Person owner) {
+        this.owner = owner;
+    }
+
+    @Override
+    public String toString() {
+        return "Dog{" +
+                "name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", owner=" + owner +
+                '}';
     }
 }

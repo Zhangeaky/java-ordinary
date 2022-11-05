@@ -1,7 +1,10 @@
 package se.reflection;
 
+import se.annotation.Zhangeaky;
+
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URLClassLoader;
 import java.util.Properties;
 
 /**
@@ -43,6 +46,32 @@ public class Practice01 {
 
     }
 
+    public static void test() {
+       // ClassLoader classLoader = new URLClassLoader();
+
+        ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader();
+        try {
+            Class<?> a = contextClassLoader.loadClass("a");
+            Class<ClassLoader> classLoaderClass = ClassLoader.class;
+
+
+        } catch (Exception e) {
+
+        }
+
+
+    }
+
+    public static void  test_annotation() {
+
+        Class<? super Zhangeaky> superclass = Zhangeaky.class.getSuperclass();
+
+        System.out.println(Zhangeaky.class);
+
+
+
+    }
+
     public static void main(String[] args) throws ClassNotFoundException {
 
         //如何获取字节码文件的三种方式？
@@ -59,7 +88,6 @@ public class Practice01 {
         System.out.println("统一个类型对象的字节码文件Class只有唯一一个实例： " + (stringClass == aClass));
 
         // 3. java Primitive type 都有一个class属性 代表其自己的类型
-
         Class<String> stringClass1 = String.class;
         System.out.println((stringClass1 == aClass));
 
@@ -88,6 +116,9 @@ public class Practice01 {
         //静态代码块在类加载时执行，并且只执行一次, class.forname 会导致类加载
         //类加载时静态代码块执行
         Class.forName("se.reflection.temp");
+
+        System.out.println("===========");
+        test_annotation();
 
     }
 }

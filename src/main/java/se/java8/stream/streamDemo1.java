@@ -1,5 +1,6 @@
 package se.java8.stream;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -146,12 +147,34 @@ public class streamDemo1 {
 
     }
 
+    /**
+     * 流操作不会改变原有的数据结构
+     */
+    public static void test03() {
+
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+        list.add(6);
+
+        List<Integer> collect = list.stream().filter(x -> x > 4).collect(Collectors.toList());
+        System.out.println("result" + collect);
+        System.out.println("original " + list);
+
+
+    }
+
     public static void main(String[] args) {
 
         //test1();
-        generate();
+        //generate();
 
         //interOperation();
+
+        test03();
 
 
     }

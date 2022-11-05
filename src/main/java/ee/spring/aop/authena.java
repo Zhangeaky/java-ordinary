@@ -1,6 +1,5 @@
-package spring.aop;
+package ee.spring.aop;
 
-import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.context.annotation.Scope;
 
 @Scope

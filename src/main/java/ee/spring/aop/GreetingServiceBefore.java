@@ -1,4 +1,4 @@
-package spring.aop;
+package ee.spring.aop;
 
 import se.bean.GreetingService;
 import se.bean.javabean.GenericGreetingService;
