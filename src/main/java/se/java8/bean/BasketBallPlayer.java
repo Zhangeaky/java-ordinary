@@ -2,7 +2,7 @@ package se.java8.bean;
 
 import java.util.List;
 
-public class BasketBallPlayer {
+public class BasketBallPlayer implements Comparable<BasketBallPlayer>{
 
     private String name;
     private Double pts;
@@ -69,5 +69,17 @@ public class BasketBallPlayer {
         CENTER,
         POWER_FORWARD,
         SCORE_FORWARD
+    }
+
+    @Override
+    public int compareTo(BasketBallPlayer o) {
+        if ((this.getPts() - o.getPts()) > 0) {
+            return 1;
+        } else if ((this.getPts() - o.getPts()) < 0) {
+            return -1;
+        } else {
+            return 0;
+        }
+
     }
 }

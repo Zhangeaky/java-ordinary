@@ -12,7 +12,7 @@ public class CollectionApiDemo {
 
     private static Collection<Integer> demo1 =  new ArrayList<>();
 
-    private static Collection<Integer> demo2 = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
+    //private static Collection<Integer> demo2 = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
 
     private static ArrayList<Integer> instance = new ArrayList<>();
 
@@ -34,7 +34,7 @@ public class CollectionApiDemo {
 
 
         System.out.println("[Judge]: demo1's type is " + demo1.getClass().getCanonicalName());
-        System.out.println("[Judge]: demo2's type is " + demo2.getClass().getCanonicalName());
+        //System.out.println("[Judge]: demo2's type is " + demo2.getClass().getCanonicalName());
 
         instance.add(10);
 

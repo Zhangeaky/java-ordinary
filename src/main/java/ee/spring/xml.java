@@ -1,5 +1,6 @@
 package ee.spring;
 
+import ee.spring.aop.Service;
 import org.checkerframework.checker.units.qual.C;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import se.bean.Person;
@@ -13,11 +14,11 @@ public class xml {
                         "META-INF/spring/spring-service.xml");
 
         context.refresh();
-        Person bean = context.getBean(Person.class);
-        System.out.println(bean.getDog());
 
-        Dog myDog = context.getBean("myDog", Dog.class);
-        System.out.println(myDog);
+        Service bean = context.getBean(Service.class);
+        bean.doService();
+
+
 
     }
 }

@@ -12,27 +12,17 @@
 
 
     <context:annotation-config></context:annotation-config>
-    <context:component-scan base-package="se.bean.javabean"/>
+    <context:component-scan base-package="ee.spring.aop"/>
 
     <aop:aspectj-autoproxy/>
 
-    <bean  id="play" class="ee.spring.aop.player"/>
+    <bean  id="logAspect" class="ee.spring.aop.NewAspect"/>
+
 
     <aop:config>
         <aop:aspect ref="logAspect">
         </aop:aspect>
     </aop:config>
 
-    <bean id="person" class="se.bean.Person"/>
-
-    <bean id="dog" class="se.bean.javabean.animal.Dog">
-        <property name="cacheManagers">
-            <ref bean="person" />
-        </property>
-    </bean>
-
-
-    <bean id="myDog" class="se.bean.javabean.animal.Dog">
-    </bean>
 
 </beans>
