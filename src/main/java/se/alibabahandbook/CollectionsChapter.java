@@ -1,7 +1,5 @@
 package se.alibabahandbook;
 
-import org.junit.jupiter.api.Test;
-import se.bean.Person;
 import se.java8.bean.BasketBallPlayer;
 
 import java.util.*;
@@ -33,7 +31,6 @@ public class CollectionsChapter {
     }
 
 
-    @Test
     public static void test02() {
 
         Map<String, String> jj = new HashMap<>();

@@ -3,6 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/java-se-learning.iml" filepath="$PROJECT_DIR$/java-se-learning.iml" />
+      <module fileurl="file://$PROJECT_DIR$/minispring/minispring.iml" filepath="$PROJECT_DIR$/minispring/minispring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/netty/netty.iml" filepath="$PROJECT_DIR$/netty/netty.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rpc/rpc.iml" filepath="$PROJECT_DIR$/rpc/rpc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/se/se.iml" filepath="$PROJECT_DIR$/se/se.iml" />
     </modules>
   </component>
 </project>

@@ -7,11 +7,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="java-se-learning" />
+        <module name="se" />
+        <module name="rpc" />
+        <module name="netty" />
+        <module name="minispring" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="java-se-learning" target="1.8" />
+      <module name="minispring" target="8" />
+      <module name="netty" target="8" />
+      <module name="rpc" target="8" />
+      <module name="se" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

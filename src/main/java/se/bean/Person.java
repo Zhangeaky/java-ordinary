@@ -30,7 +30,7 @@ public class Person extends AbstractPerson {
         System.out.println("公有无参构造方法...");
     }
 
-    private Person(String name, int age) {
+    public Person(String name, int age) {
         this.age = age;
         this.name = name;
     }
