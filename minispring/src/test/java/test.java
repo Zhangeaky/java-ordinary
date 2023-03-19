@@ -7,9 +7,7 @@ public class test {
 
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("META-INF/bean.xml");
-
         Object user = context.getBean("user");
-
         User bean = (User) user;
         bean.say();
     }

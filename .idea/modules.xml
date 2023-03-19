@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/algo/algo.iml" filepath="$PROJECT_DIR$/algo/algo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/j2ee/j2ee.iml" filepath="$PROJECT_DIR$/j2ee/j2ee.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-se-learning.iml" filepath="$PROJECT_DIR$/java-se-learning.iml" />
       <module fileurl="file://$PROJECT_DIR$/minispring/minispring.iml" filepath="$PROJECT_DIR$/minispring/minispring.iml" />
       <module fileurl="file://$PROJECT_DIR$/netty/netty.iml" filepath="$PROJECT_DIR$/netty/netty.iml" />
