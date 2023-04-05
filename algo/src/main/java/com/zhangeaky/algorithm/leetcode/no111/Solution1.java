@@ -1,6 +1,7 @@
 package com.zhangeaky.algorithm.leetcode.no111;
 
 import com.zhangeaky.algorithm.leetcode.TreeNode;
+import com.zhangeaky.algorithm.leetcode.TreeNodeUtil;
 import com.zhangeaky.algorithm.leetcode.no226.Solution;
 
 /**
@@ -25,29 +26,35 @@ public class Solution1 {
             return minDepth;
         }
 
-        return process(root, minDepth);
+        return process(root, minDepth+1);
 
     }
 
-    private Integer process(TreeNode currentNode, Integer currentDepth) {
+    private Integer process(TreeNode currentNode, int currentDepth) {
 
-        if (null == currentNode) {
+        if (null == currentNode.left && null == currentNode.right) {
             return currentDepth;
         }
-        currentDepth++;
+
         int leftValue = currentDepth;
         int rightValue = currentDepth;
-
+        int result = currentDepth;
 
         if (null != currentNode.left) {
-            leftValue = process(currentNode.left, currentDepth);
+            leftValue = process(currentNode.left, currentDepth+1);
+            result = leftValue;
         }
 
         if (null != currentNode.right) {
-            rightValue = process(currentNode.right, currentDepth);
+            if (currentNode.left == null) {
+                rightValue = process(currentNode.right, currentDepth+1);
+            } else {
+                rightValue = Math.min(process(currentNode.right, currentDepth+1), leftValue);
+            }
+            result = rightValue;
         }
 
-        return Math.min(rightValue, leftValue);
+        return result;
 
     }
 
@@ -56,6 +63,10 @@ public class Solution1 {
         Solution1 solution1 = new Solution1();
         int i = solution1.minDepth(build());
         System.out.println(i);
+
+        TreeNode treeNode = TreeNodeUtil
+                .arrayToTreeNode(new Integer[]{2, null, 3, null, 4, null, 5, null, 6});
+        System.out.println(treeNode);
 
     }
 
