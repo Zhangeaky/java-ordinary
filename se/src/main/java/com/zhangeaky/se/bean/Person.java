@@ -1,12 +1,10 @@
 package com.zhangeaky.se.bean;
 
-import org.springframework.stereotype.Component;
 import com.zhangeaky.se.bean.javabean.animal.Dog;
 import com.zhangeaky.se.reflection.bean.AbstractPerson;
 
 import java.util.Objects;
 
-@Component("owner")
 public class Person extends AbstractPerson {
 
     private String name;

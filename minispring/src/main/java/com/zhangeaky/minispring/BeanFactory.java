@@ -6,4 +6,6 @@ public interface BeanFactory {
 
     void registerBeanDefinition(BeanDefinition beanDefinition);
 
+    //void registerBean(String beanName, Object bean);
+
 }

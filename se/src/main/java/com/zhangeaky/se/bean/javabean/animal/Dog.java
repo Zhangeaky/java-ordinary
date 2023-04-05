@@ -1,6 +1,5 @@
 package com.zhangeaky.se.bean.javabean.animal;
 
-import org.springframework.stereotype.Component;
 import com.zhangeaky.se.bean.Person;
 
 import java.util.Objects;

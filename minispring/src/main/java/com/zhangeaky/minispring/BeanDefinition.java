@@ -2,9 +2,15 @@ package com.zhangeaky.minispring;
 
 public class BeanDefinition {
 
-    String id;
+    private String id;
 
-    String className;
+    private String className;
+
+    private String[] dependsOn;
+
+    //private
+
+
 
     public BeanDefinition(String id, String className) {
         this.id = id;
