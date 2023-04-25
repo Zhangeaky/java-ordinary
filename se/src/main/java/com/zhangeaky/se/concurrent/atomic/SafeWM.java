@@ -1,4 +1,4 @@
-package com.zhangeaky.se.concurrent.juc.atomic;
+package com.zhangeaky.se.concurrent.atomic;
 
 import java.util.concurrent.atomic.AtomicReference;
 

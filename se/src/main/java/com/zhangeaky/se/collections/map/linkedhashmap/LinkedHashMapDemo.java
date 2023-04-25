@@ -1,4 +1,4 @@
-package com.zhangeaky.se.collections.map;
+package com.zhangeaky.se.collections.map.linkedhashmap;
 
 import com.zhangeaky.se.java8.bean.BasketBallPlayer;
 import com.zhangeaky.se.java8.stream.StreamDemo3;
@@ -10,24 +10,24 @@ import java.util.stream.Collectors;
 
 public class LinkedHashMapDemo {
 
-
+    /**
+     *  测试lhmap按照访问顺序排序
+     */
     public static void test01() {
 
-        HashMap<Integer, Integer> mm = new LinkedHashMap<>(10, 0.75F, true);
+        Map<Integer, Integer> mm = new LinkedHashMap<>(
+                10, 0.75F, true);
 
-        mm.put(300, 11);
-        mm.put(100,12);
-        mm.put(500, 23);
-        mm.put(200, 22);
-        mm.put(101, 22);
+        mm.put(5, 11);
+        mm.put(4, 12);
+        mm.put(3, 23);
+        mm.put(2, 22);
+        mm.put(1, 22);
 
-
-
-        for (Map.Entry element : mm.entrySet()) {
-
-            System.out.println(element.getKey());
-
+        for (Integer element : mm.keySet()) {
+            System.out.println(element);
         }
+
         System.out.println("-----------");
 
         HashMap<Integer, Integer> hashMap = new HashMap<>();

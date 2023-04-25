@@ -1,4 +1,4 @@
-package com.zhangeaky.algorithm.leetcode.zuo;
+package com.zhangeaky.algorithm.zuo;
 
 /**
  * 求二叉树的最小深度

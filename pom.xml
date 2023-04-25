@@ -15,6 +15,7 @@
         <module>se</module>
         <module>algo</module>
         <module>j2ee</module>
+        <module>dubbo</module>
     </modules>
 
     <properties>
